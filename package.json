@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-traceroute",
+  "version": "0.0.1",
+  "description": "Cordova plugin to trace routing on iOS",
+  "cordova": {
+    "id": "cordova-plugin-traceroute",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuehne-nagel-hk/cordova-plugin-traceroute.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "android",
+    "network",
+    "diagnosis",
+    "ios",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "kuehne.nagel.hk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuehne-nagel-hk/cordova-plugin-traceroute/issues"
+  },
+  "homepage": "https://github.com/kuehne-nagel-hk/cordova-plugin-traceroute#readme"
+}
