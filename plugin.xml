@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-traceroute" version="0.0.1">
+  <name>NetworkTraceroutePlugin</name>
+  <description>Cordova plugin to trace routing on iOS</description>
+  <license>MIT</license>
+  <keywords>cordova,plugin,android,network,diagnosis,ios</keywords>
+  <repo>https://github.com/cordova-plugin-traceroute.git</repo>
+  <issue>https://github.com/cordova-plugin-traceroute/issues</issue>
+
+  <js-module src="www/traceroute.js" name="traceroute">
+    <clobbers target="traceroute"/>
+  </js-module>
+  
+  <!-- iOS -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CDVTraceRT">
+        <param name="ios-package" value="CDVTraceRT"/>
+      </feature>
+    </config-file>
+    
+    <header-file src="src/ios/CDVTraceRT.h" />
+    <source-file src="src/ios/CDVTraceRT.m" />
+    
+    <header-file src="src/ios/traceroute/TracerouteCommon.h" />
+    <source-file src="src/ios/traceroute/TracerouteCommon.m" />
+    
+    <header-file src="src/ios/traceroute/Traceroute.h" />
+    <source-file src="src/ios/traceroute/Traceroute.m" />
+    
+    <header-file src="src/ios/traceroute/TracerouteRecord.h" />
+    <source-file src="src/ios/traceroute/TracerouteRecord.m" />
+  </platform>
+
+  <!-- Android : to be developed -->
+  
+</plugin>
