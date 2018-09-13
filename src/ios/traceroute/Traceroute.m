@@ -127,7 +127,7 @@
                        isIPv6 ? IPV6_UNICAST_HOPS : IP_TTL,
                        &ttl,
                        sizeof(ttl)) < 0) {
-            NSLog(@"setsockopt失败");
+            NSLog(@"setsockopt failure");
         }
         succeed = [self sendAndRecv:send_sock addr:remoteAddr ttl:ttl];
     } while (++ttl <= _maxTtl && !succeed);
