@@ -7,7 +7,7 @@ Cordova Plugin of Traceroute for iOS
 * Use ICMP protocol (both of send & receive) to communicate with node, more reliable than using UDP protocol
 * Domain Name and specific IP address (both of IPv4 & IPv6) are supported
 
-## Thanks to the author of the original traceroute
+## Thanks to the author of the original Traceroute
 https://github.com/L-Zephyr/MyDemos
 
 
