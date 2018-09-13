@@ -25,19 +25,21 @@
                                   queue:dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0)
                            stepCallback:^(TracerouteRecord *record) {
                                dispatch_async(dispatch_get_main_queue(), ^{
-                                   // do something here
+                                   self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:record.description];
+                                   [self.pluginResult setKeepCallbackAsBool:YES];
+                                   [self.commandDelegate sendPluginResult: self.pluginResult callbackId: self.cmd.callbackId];
                                });
                            } finish:^(NSArray<TracerouteRecord *> *results, BOOL succeed) {
                                dispatch_async(dispatch_get_main_queue(), ^{
-                                   NSString *prettyResult = [self toPrettyResult:results];
+                                   // NSString *prettyResult = [self toPrettyResult:results];
                                    if (succeed) {
                                        NSLog(@"> Traceroute Success!");
-                                       NSString *output = [NSString stringWithFormat:@"%@", prettyResult];
-                                       self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:output];
+                                       // NSString *output = [NSString stringWithFormat:@"%@", prettyResult];
+                                       self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"> Traceroute Success!"];
                                    } else {
                                        NSLog(@"> Traceroute Failure!");
-                                       NSString *output = [NSString stringWithFormat:@"%@", prettyResult];
-                                       self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:output];
+                                       //  NSString *output = [NSString stringWithFormat:@"%@", prettyResult];
+                                       self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"> Traceroute Failure!"];
                                    }
                                    [self.pluginResult setKeepCallbackAsBool:NO];
                                    [self.commandDelegate sendPluginResult: self.pluginResult callbackId: self.cmd.callbackId];
